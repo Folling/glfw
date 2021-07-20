@@ -31,6 +31,7 @@
 
 #include <X11/cursorfont.h>
 #include <X11/Xmd.h>
+#include <X11/keysym.h>
 
 #include <sys/select.h>
 
@@ -1273,8 +1274,14 @@ static void processEvent(XEvent *event)
                 Time diff = event->xkey.time - window->x11.keyPressTimes[keycode];
                 if (diff == event->xkey.time || (diff > 0 && diff < (1 << 31)))
                 {
-                    if (keycode)
-                        _glfwInputKey(window, key, keycode, GLFW_PRESS, mods);
+                    if (keycode) {
+                        char c[64];
+                        KeySym keysym;
+                        Status status;
+                        Xutf8LookupString(window->x11.ic, &event->xkey, c, 64, &keysym, &status);
+
+                        _glfwInputKey(window, keysym, keycode, GLFW_PRESS, mods);
+                    }
 
                     window->x11.keyPressTimes[keycode] = event->xkey.time;
                 }

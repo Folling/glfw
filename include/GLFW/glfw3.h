@@ -385,6 +385,143 @@ extern "C" {
  *  @{
  */
 
+// FIXME we cannot access glfw_config.h here, simple stub to showcase behaviour on X11
+// GLFW should probably use target_compile_definitions in CMake instead of their current solution
+#if true || defined(_GLFW_X11)
+
+#include <X11/keysym.h>
+
+/* The unknown key */
+#define GLFW_KEY_UNKNOWN            -1
+
+/* Printable keys */
+#define GLFW_KEY_SPACE              XK_space
+#define GLFW_KEY_APOSTROPHE         XK_apostrophe  /* ' */
+#define GLFW_KEY_COMMA              XK_comma  /* , */
+#define GLFW_KEY_MINUS              XK_minus  /* - */
+#define GLFW_KEY_PERIOD             XK_period  /* . */
+#define GLFW_KEY_SLASH              XK_slash  /* / */
+#define GLFW_KEY_0                  XK_0
+#define GLFW_KEY_1                  XK_1
+#define GLFW_KEY_2                  XK_2
+#define GLFW_KEY_3                  XK_3
+#define GLFW_KEY_4                  XK_4
+#define GLFW_KEY_5                  XK_5
+#define GLFW_KEY_6                  XK_6
+#define GLFW_KEY_7                  XK_7
+#define GLFW_KEY_8                  XK_8
+#define GLFW_KEY_9                  XK_9
+#define GLFW_KEY_SEMICOLON          XK_semicolon  /* ; */
+#define GLFW_KEY_EQUAL              XK_equal  /* = */
+#define GLFW_KEY_A                  XK_a
+#define GLFW_KEY_B                  XK_b
+#define GLFW_KEY_C                  XK_c
+#define GLFW_KEY_D                  XK_d
+#define GLFW_KEY_E                  XK_e
+#define GLFW_KEY_F                  XK_f
+#define GLFW_KEY_G                  XK_g
+#define GLFW_KEY_H                  XK_h
+#define GLFW_KEY_I                  XK_i
+#define GLFW_KEY_J                  XK_j
+#define GLFW_KEY_K                  XK_k
+#define GLFW_KEY_L                  XK_l
+#define GLFW_KEY_M                  XK_m
+#define GLFW_KEY_N                  XK_n
+#define GLFW_KEY_O                  XK_o
+#define GLFW_KEY_P                  XK_p
+#define GLFW_KEY_Q                  XK_q
+#define GLFW_KEY_R                  XK_r
+#define GLFW_KEY_S                  XK_s
+#define GLFW_KEY_T                  XK_t
+#define GLFW_KEY_U                  XK_u
+#define GLFW_KEY_V                  XK_v
+#define GLFW_KEY_W                  XK_w
+#define GLFW_KEY_X                  XK_x
+#define GLFW_KEY_Y                  XK_y
+#define GLFW_KEY_Z                  XK_z
+#define GLFW_KEY_LEFT_BRACKET       XK_bracketleft  /* [ */
+#define GLFW_KEY_BACKSLASH          XK_backslash  /* \ */
+#define GLFW_KEY_RIGHT_BRACKET      XK_bracketright  /* ] */
+#define GLFW_KEY_GRAVE_ACCENT       XK_grave  /* ` */
+#define GLFW_KEY_WORLD_1            161 /* non-US #1 */
+#define GLFW_KEY_WORLD_2            162 /* non-US #2 */
+
+/* Function keys */
+#define GLFW_KEY_ESCAPE             XK_Escape
+#define GLFW_KEY_ENTER              XK_Return
+#define GLFW_KEY_TAB                XK_Tab
+#define GLFW_KEY_BACKSPACE          XK_BackSpace
+#define GLFW_KEY_INSERT             XK_Insert
+#define GLFW_KEY_DELETE             XK_Delete
+#define GLFW_KEY_RIGHT              XK_Right
+#define GLFW_KEY_LEFT               XK_Left
+#define GLFW_KEY_DOWN               XK_Down
+#define GLFW_KEY_UP                 XK_Up
+#define GLFW_KEY_PAGE_UP            XK_Page_Up
+#define GLFW_KEY_PAGE_DOWN          XK_Page_Down
+#define GLFW_KEY_HOME               XK_Home
+#define GLFW_KEY_END                XK_End
+#define GLFW_KEY_CAPS_LOCK          XK_Caps_Lock
+#define GLFW_KEY_SCROLL_LOCK        XK_Scroll_Lock
+#define GLFW_KEY_NUM_LOCK           XK_Num_Lock
+#define GLFW_KEY_PRINT_SCREEN       XK_Print
+#define GLFW_KEY_PAUSE              XK_Pause
+#define GLFW_KEY_F1                 XK_F1
+#define GLFW_KEY_F2                 XK_F2
+#define GLFW_KEY_F3                 XK_F3
+#define GLFW_KEY_F4                 XK_F4
+#define GLFW_KEY_F5                 XK_F5
+#define GLFW_KEY_F6                 XK_F6
+#define GLFW_KEY_F7                 XK_F7
+#define GLFW_KEY_F8                 XK_F8
+#define GLFW_KEY_F9                 XK_F9
+#define GLFW_KEY_F10                XK_F10
+#define GLFW_KEY_F11                XK_F11
+#define GLFW_KEY_F12                XK_F12
+#define GLFW_KEY_F13                XK_F13
+#define GLFW_KEY_F14                XK_F14
+#define GLFW_KEY_F15                XK_F15
+#define GLFW_KEY_F16                XK_F16
+#define GLFW_KEY_F17                XK_F17
+#define GLFW_KEY_F18                XK_F18
+#define GLFW_KEY_F19                XK_F19
+#define GLFW_KEY_F20                XK_F20
+#define GLFW_KEY_F21                XK_F21
+#define GLFW_KEY_F22                XK_F22
+#define GLFW_KEY_F23                XK_F23
+#define GLFW_KEY_F24                XK_F24
+#define GLFW_KEY_F25                XK_F25
+#define GLFW_KEY_KP_0               XK_KP_0
+#define GLFW_KEY_KP_1               XK_KP_1
+#define GLFW_KEY_KP_2               XK_KP_2
+#define GLFW_KEY_KP_3               XK_KP_3
+#define GLFW_KEY_KP_4               XK_KP_4
+#define GLFW_KEY_KP_5               XK_KP_5
+#define GLFW_KEY_KP_6               XK_KP_6
+#define GLFW_KEY_KP_7               XK_KP_7
+#define GLFW_KEY_KP_8               XK_KP_8
+#define GLFW_KEY_KP_9               XK_KP_9
+#define GLFW_KEY_KP_DECIMAL         XK_KP_Decimal
+#define GLFW_KEY_KP_DIVIDE          XK_KP_Divide
+#define GLFW_KEY_KP_MULTIPLY        XK_KP_Multiply
+#define GLFW_KEY_KP_SUBTRACT        XK_KP_Subtract
+#define GLFW_KEY_KP_ADD             XK_KP_Add
+#define GLFW_KEY_KP_ENTER           XK_KP_Enter
+#define GLFW_KEY_KP_EQUAL           XK_KP_Equal
+#define GLFW_KEY_LEFT_SHIFT         XK_Shift_L
+#define GLFW_KEY_LEFT_CONTROL       XK_Control_L
+#define GLFW_KEY_LEFT_ALT           XK_Alt_L
+#define GLFW_KEY_LEFT_SUPER         XK_Meta_L
+#define GLFW_KEY_RIGHT_SHIFT        XK_Shift_R
+#define GLFW_KEY_RIGHT_CONTROL      XK_Control_R
+#define GLFW_KEY_RIGHT_ALT          XK_Alt_R
+#define GLFW_KEY_RIGHT_SUPER        XK_Meta_R
+#define GLFW_KEY_MENU               XK_Menu
+
+#define GLFW_KEY_LAST               GLFW_KEY_MENU
+
+#else 
+
 /* The unknown key */
 #define GLFW_KEY_UNKNOWN            -1
 
@@ -513,6 +650,7 @@ extern "C" {
 #define GLFW_KEY_MENU               348
 
 #define GLFW_KEY_LAST               GLFW_KEY_MENU
+#endif
 
 /*! @} */
 
